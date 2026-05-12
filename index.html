@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfolio — Joshua Mortel</title>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Exo+2:ital,wght@0,300;0,400;0,500;1,300&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- CURSOR -->
+<div id="cursor"></div>
+<div id="cursor-ring"></div>
+
+<!-- BACKGROUND LAYERS -->
+<canvas id="starfield"></canvas>
+<div class="nebula-bg nebula-1"></div>
+<div class="nebula-bg nebula-2"></div>
+<div class="nebula-bg nebula-3"></div>
+<div class="planet planet-1"></div>
+<div class="planet planet-2"></div>
+<div class="planet planet-3"></div>
+
+<!-- NAV -->
+<nav>
+  <a href="#hero" class="nav-logo">JOSHUA<span>.</span>DEV</a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#github">GitHub</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="astronaut-container">
+    <svg class="astronaut-svg" viewBox="0 0 130 130" xmlns="http://www.w3.org/2000/svg">
+      <!-- Astronaut suit body -->
+      <circle cx="65" cy="45" r="28" fill="#c8d4e8" stroke="#7a8fa8" stroke-width="1.5"/>
+      <!-- Visor -->
+      <circle cx="65" cy="43" r="17" fill="#0a1628"/>
+      <circle cx="65" cy="43" r="15" fill="url(#visor-grad)"/>
+      <!-- Visor reflection -->
+      <ellipse cx="58" cy="37" rx="5" ry="3" fill="rgba(34,211,238,0.4)" transform="rotate(-20,58,37)"/>
+      <ellipse cx="72" cy="50" rx="3" ry="2" fill="rgba(34,211,238,0.2)"/>
+      <!-- Helmet ring -->
+      <circle cx="65" cy="45" r="28" fill="none" stroke="#a0b0c8" stroke-width="2.5"/>
+      <!-- Suit body -->
+      <rect x="45" y="70" width="40" height="38" rx="10" fill="#d4dde8" stroke="#9aabc0" stroke-width="1.5"/>
+      <!-- Arms -->
+      <rect x="26" y="68" width="22" height="12" rx="6" fill="#c8d4e8" stroke="#9aabc0" stroke-width="1.5" transform="rotate(-15,37,74)"/>
+      <rect x="82" y="68" width="22" height="12" rx="6" fill="#c8d4e8" stroke="#9aabc0" stroke-width="1.5" transform="rotate(15,93,74)"/>
+      <!-- Gloves -->
+      <ellipse cx="29" cy="84" rx="8" ry="6" fill="#7a8fa8" transform="rotate(-15,29,84)"/>
+      <ellipse cx="101" cy="84" rx="8" ry="6" fill="#7a8fa8" transform="rotate(15,101,84)"/>
+      <!-- Legs -->
+      <rect x="50" y="104" width="14" height="20" rx="5" fill="#c0ccda" stroke="#9aabc0" stroke-width="1.5"/>
+      <rect x="66" y="104" width="14" height="20" rx="5" fill="#c0ccda" stroke="#9aabc0" stroke-width="1.5"/>
+      <!-- Boots -->
+      <rect x="47" y="120" width="18" height="8" rx="4" fill="#6b7fa0"/>
+      <rect x="65" y="120" width="18" height="8" rx="4" fill="#6b7fa0"/>
+      <!-- Chest panel -->
+      <rect x="55" y="78" width="20" height="14" rx="3" fill="#1e3a5f" stroke="#2d5a9e" stroke-width="1"/>
+      <rect x="58" y="81" width="5" height="3" rx="1" fill="#22d3ee" opacity="0.8"/>
+      <rect x="65" y="81" width="5" height="3" rx="1" fill="#f472b6" opacity="0.8"/>
+      <rect x="58" y="86" width="12" height="2" rx="1" fill="#fbbf24" opacity="0.6"/>
+      <!-- Backpack -->
+      <rect x="56" y="70" width="18" height="10" rx="3" fill="#b0bdd0" stroke="#8a9bb5" stroke-width="1"/>
+      <!-- Flag patch -->
+      <rect x="47" y="75" width="8" height="5" rx="1" fill="#3b82f6"/>
+      <rect x="47" y="75" width="8" height="1.6" rx="0.5" fill="#fff"/>
+      <!-- Tether line -->
+      <path d="M 65 128 Q 65 135 75 138" stroke="rgba(34,211,238,0.5)" stroke-width="1.5" fill="none" stroke-dasharray="3,2"/>
+      <defs>
+        <radialGradient id="visor-grad" cx="40%" cy="35%">
+          <stop offset="0%" stop-color="#1e3a60"/>
+          <stop offset="100%" stop-color="#050a18"/>
+        </radialGradient>
+      </defs>
+    </svg>
+  </div>
+
+  <div class="hero-badge">// Software Engineer · Open for Opportunities</div>
+  <h1 class="hero-title">Hi, I'm <span style="-webkit-text-fill-color:transparent;background:linear-gradient(135deg,#f0f4ff 0%,#22d3ee 40%,#f472b6 80%);-webkit-background-clip:text;background-clip:text;">Joshua!</span></h1>
+  <div class="hero-subtitle">App Dev · Web Dev · Full-Stack</div>
+  <p class="hero-desc">
+    Computer Science graduate with a passion for building cross-platform mobile apps and scalable full-stack web systems — from sleek Flutter UIs to robust PHP backends.
+  </p>
+  <div class="hero-ctas">
+    <a href="#projects" class="btn btn-primary">View Projects</a>
+    <a href="#contact" class="btn btn-outline">Contact Me</a>
+    <a id="hero-cv-btn" href="resume/app-dev-resume.pdf" data-app-href="resume/app-dev-resume.pdf" data-web-href="resume/web-dev-resume.pdf" download class="btn btn-resume">⬇ Download CV</a>
+  </div>
+  <div class="scroll-indicator">
+    <span>Scroll to Explore</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<div class="cosmic-divider"></div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-label">01 // Transmission</div>
+  <h2 class="section-title">About <span>Me</span></h2>
+
+  <div class="tab-controls">
+    <button class="tab-btn active" onclick="switchTab('app')">📱 App Dev</button>
+    <button class="tab-btn" onclick="switchTab('web')">🌐 Web Dev</button>
+  </div>
+
+  <div class="about-grid reveal">
+    <div class="about-text">
+      <div class="about-photo-block">
+        <div class="about-photo-wrap">
+          <div class="about-photo-ring"></div>
+          <div class="about-photo" id="about-photo">
+            <img src="icons-images/personal-photo.jpg" alt="Joshua" id="profile-img"/>
+          </div>
+          <div class="about-photo-orbit"></div>
+        </div>
+        <div class="about-identity">
+          <div class="about-fullname">Joshua Adrian Mortel</div>
+          <div class="about-location">📍 Philippines</div>
+          <div class="about-location">🎓 Computer Science Graduate</div>
+          <a id="about-cv-btn" href="resume/app-dev-resume.pdf" data-app-href="resume/app-dev-resume.pdf" data-web-href="resume/web-dev-resume.pdf" download class="about-cv-btn">⬇ Download CV / Resume</a>
+        </div>
+      </div>
+
+      <div id="tab-app-text" class="tab-panel active">
+        <p>I'm a <strong>Computer Science graduate</strong> specializing in cross-platform mobile development. With Flutter, Firebase, and REST APIs at my core, I craft apps that feel native, perform fast, and look stunning on any device.</p>
+        <p>My approach combines <strong>modern UI design principles</strong> with robust backend integration — creating experiences that users actually enjoy using. From authentication flows to real-time data sync, I handle the full mobile stack.</p>
+      </div>
+
+      <div id="tab-web-text" class="tab-panel">
+        <p>As a <strong>full-stack web developer</strong>, I build responsive, scalable web applications from the ground up. I'm proficient in PHP with CodeIgniter and Laravel, crafting clean RESTful backends paired with dynamic frontends.</p>
+        <p>I have hands-on experience with <strong>WordPress and WooCommerce</strong> for e-commerce solutions, and I care deeply about performance, cross-browser compatibility, and intuitive UI/UX design.</p>
+      </div>
+    </div>
+
+    <div>
+      <div id="tab-app-skills" class="tab-panel active">
+        <div class="skills-grid">
+          <div class="skill-card">
+            <span class="skill-icon">📱</span>
+            <div class="skill-cat">Mobile</div>
+            <div class="skill-name">Flutter, Dart, FlutterFlow, Android Studio</div>
+          </div>
+          <div class="skill-card">
+            <span class="skill-icon">⚙️</span>
+            <div class="skill-cat">Backend</div>
+            <div class="skill-name">Firebase, REST APIs, PHP (Laravel, CodeIgniter)</div>
+          </div>
+          <div class="skill-card">
+            <span class="skill-icon">🗄️</span>
+            <div class="skill-cat">Database</div>
+            <div class="skill-name">MySQL, Firebase Realtime DB</div>
+          </div>
+          <div class="skill-card">
+            <span class="skill-icon">🛠️</span>
+            <div class="skill-cat">Tools</div>
+            <div class="skill-name">Git, GitHub, Expo/Expo Go, Figma, VS Code</div>
+          </div>
+          <div class="skill-card">
+            <span class="skill-icon">🌐</span>
+            <div class="skill-cat">Frontend</div>
+            <div class="skill-name">HTML, CSS, JavaScript</div>
+          </div>
+          <div class="skill-card">
+            <span class="skill-icon">⚡</span>
+            <div class="skill-cat">Languages</div>
+            <div class="skill-name">Java, Python, C, C++</div>
+          </div>
+        </div>
+      </div>
+
+      <div id="tab-web-skills" class="tab-panel">
+        <div class="skills-grid">
+          <div class="skill-card">
+            <span class="skill-icon">🌐</span>
+            <div class="skill-cat">Frontend</div>
+            <div class="skill-name">HTML, CSS, JavaScript</div>
+          </div>
+          <div class="skill-card">
+            <span class="skill-icon">⚙️</span>
+            <div class="skill-cat">Backend</div>
+            <div class="skill-name">PHP, Laravel, CodeIgniter, REST APIs</div>
+          </div>
+          <div class="skill-card">
+            <span class="skill-icon">🛒</span>
+            <div class="skill-cat">CMS / E-com</div>
+            <div class="skill-name">WordPress, WooCommerce</div>
+          </div>
+          <div class="skill-card">
+            <span class="skill-icon">🗄️</span>
+            <div class="skill-cat">Database</div>
+            <div class="skill-name">MySQL, SQL</div>
+          </div>
+          <div class="skill-card">
+            <span class="skill-icon">📱</span>
+            <div class="skill-cat">Mobile</div>
+            <div class="skill-name">Flutter, Dart, FlutterFlow, Android Studio</div>
+          </div>
+          <div class="skill-card">
+            <span class="skill-icon">🛠️</span>
+            <div class="skill-cat">Tools</div>
+            <div class="skill-name">Git, GitHub, XAMPP, Vercel, Figma</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="cosmic-divider"></div>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="section-label">02 // Missions</div>
+  <h2 class="section-title">Featured <span>Projects</span></h2>
+
+  <div class="tab-controls projects-tabs">
+    <button class="tab-btn active" onclick="switchProjectTab('all')">All</button>
+    <button class="tab-btn" onclick="switchProjectTab('mobile')">📱 Mobile</button>
+    <button class="tab-btn" onclick="switchProjectTab('web')">🌐 Web</button>
+  </div>
+
+  <div class="project-grid" id="project-grid">
+
+    <div class="project-card reveal" data-type="mobile">
+      <span class="project-type type-mobile">Mobile App</span>
+      <div class="project-name">SMART NUTRITION</div>
+      <div class="project-date">AI-Powered Meal Planner</div>
+      <div class="project-desc">A decision-support system utilizing AI for personalized Filipino meal recommendations. Generates 7-day meal plans using a hybrid K-Means clustering and Decision Tree model, with an expert system enforcing allergen filtering and health condition overrides.</div>
+      <div class="project-tech">
+        <span class="tech-tag">Flutter</span>
+        <span class="tech-tag">Dart</span>
+        <span class="tech-tag">Python</span>
+        <span class="tech-tag">Django</span>
+        <span class="tech-tag">scikit-learn</span>
+        <span class="tech-tag">PostgreSQL</span>
+        <span class="tech-tag">Google Colab</span>
+      </div>
+    </div>
+
+    <div class="project-card reveal" data-type="mobile">
+      <span class="project-type type-mobile">Mobile App</span>
+      <div class="project-name">FLICKSTER</div>
+      <div class="project-date">Movie Review App</div>
+      <div class="project-desc">A mobile app for browsing, rating, and reviewing movies. Features FlutterFlow UI with Firebase for user auth and data storage. Includes movie search, user reviews, and personalized watchlists.</div>
+      <div class="project-tech">
+        <span class="tech-tag">Flutter</span>
+        <span class="tech-tag">FlutterFlow</span>
+        <span class="tech-tag">Firebase</span>
+        <span class="tech-tag">Dart</span>
+      </div>
+    </div>
+
+    <div class="project-card reveal" data-type="web">
+      <span class="project-type type-web">Web App</span>
+      <div class="project-name">CREATURE QUEST</div>
+      <div class="project-date">Heroes' Journey</div>
+      <div class="project-desc">A single-player RPG inspired by Pokémon and creature-collecting games. Explore a pixel art world, battle wild creatures, catch and train them, and take on NPC trainers in turn-based combat. Features 7 unique abilities, a quest system, auto-save, and real-time HUD stats.</div>
+      <div class="project-tech">
+        <span class="tech-tag">Python</span>
+        <span class="tech-tag">Pygame</span>
+        <span class="tech-tag">pytest</span>
+      </div>
+    </div>
+
+    <div class="project-card reveal" data-type="web">
+      <span class="project-type type-web">Web App</span>
+      <div class="project-name">MEDIA CONVERTER</div>
+      <div class="project-date">Media Conversion Web App</div>
+      <div class="project-desc">A Flask-based web app for extracting and converting online video audio into MP3 downloads. Features FFmpeg transcoding, automatic file cleanup, and streamlined one-click browser downloads.</div>
+      <div class="project-tech">
+        <span class="tech-tag">Python</span>
+        <span class="tech-tag">Flask</span>
+        <span class="tech-tag">yt-dlp</span>
+        <span class="tech-tag">FFmpeg</span>
+        <span class="tech-tag">JavaScript</span>
+        <span class="tech-tag">HTML/CSS</span>
+      </div>
+    </div>
+
+    <div class="project-card reveal" data-type="web">
+      <span class="project-type type-web">Web System</span>
+      <div class="project-name">FPIMS</div>
+      <div class="project-date">Facility and Parking Information Management System</div>
+      <div class="project-desc">A web-based system designed to manage facility and parking operations, providing real-time availability tracking, slot booking functionality, role-based access control, and an administrative dashboard for monitoring and user management.</div>
+      <div class="project-tech">
+        <span class="tech-tag">JavaScript</span>
+        <span class="tech-tag">PHP</span>
+        <span class="tech-tag">CodeIgniter</span>
+        <span class="tech-tag">MySQL</span>
+        <span class="tech-tag">HTML/CSS</span>
+      </div>
+    </div>
+
+    <div class="project-card reveal" data-type="web">
+      <span class="project-type type-web">Web System</span>
+      <div class="project-name">FRUSS</div>
+      <div class="project-date">Facilities Reservation and Utilization System</div>
+      <div class="project-desc">A web-based system designed to manage facility reservation and utilization, providing easy booking, real-time availability updates, and an administrative dashboard for facility monitoring, usage analytics, and user management.</div>
+      <div class="project-tech">
+        <span class="tech-tag">JavaScript</span>
+        <span class="tech-tag">PHP</span>
+        <span class="tech-tag">CodeIgniter</span>
+        <span class="tech-tag">MySQL</span>
+        <span class="tech-tag">HTML/CSS</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<div class="cosmic-divider"></div>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="section-label">03 // Mission Log</div>
+  <h2 class="section-title">Work <span>Experience</span></h2>
+
+  <div class="exp-card reveal">
+    <div class="exp-header">
+      <div class="exp-role">Web Development Intern</div>
+      <div class="exp-period">June 2025 – August 2025</div>
+    </div>
+    <div class="exp-company">iFormatLogic IT Solutions</div>
+    <a href="https://optix-lab-wandering-astronauts-projects.vercel.app/" class="exp-link" target="_blank">🔗 optix-lab-wandering-astronauts-projects.vercel.app</a>
+    <div class="exp-stack">Tech Stack: HTML, CSS, JavaScript, WordPress, WooCommerce</div>
+    <ul class="exp-list">
+      <li>Developed a fully responsive e-commerce website using HTML, CSS, and JavaScript</li>
+      <li>Built and customized WordPress and WooCommerce functionality for product listings, cart, and checkout</li>
+      <li>Translated UI/UX designs into functional and user-friendly web applications</li>
+      <li>Optimized website performance and ensured cross-browser compatibility</li>
+      <li>Conducted debugging and testing to improve reliability and user experience</li>
+      <li>Deployed and hosted the final website, making it publicly accessible</li>
+    </ul>
+  </div>
+</section>
+
+<div class="cosmic-divider"></div>
+
+<!-- EDUCATION -->
+<section id="education">
+  <div class="section-label">04 // Flight Academy</div>
+  <h2 class="section-title">Education &amp; <span>Training</span></h2>
+
+  <div class="edu-card reveal">
+    <div>
+      <div class="edu-degree">Bachelor of Science in Computer Science</div>
+      <div class="edu-school">Columban College, Inc.</div>
+      <div class="edu-honors">
+        <span class="honor-badge">⭐ Dean's List 2022–2025</span>
+        <span class="honor-badge">🏆 Academic Honor 2024–2025</span>
+        <span class="honor-badge">📄 Best Research Documentation</span>
+      </div>
+      <div class="coursework-grid" style="margin-top:20px;">
+        <div style="font-family:'Share Tech Mono',monospace;font-size:0.62rem;letter-spacing:0.2em;color:var(--dim-text);text-transform:uppercase;width:100%;margin-bottom:4px;">Relevant Coursework</div>
+        <span class="course-tag">Software Engineering</span>
+        <span class="course-tag">Web Design &amp; Development</span>
+        <span class="course-tag">Data Structures &amp; Algorithms</span>
+        <span class="course-tag">Mobile Application Development</span>
+        <span class="course-tag">Applications Dev &amp; Emerging Technologies</span>
+      </div>
+    </div>
+    <div class="edu-period">2022 – 2026</div>
+  </div>
+
+  <!-- CERTIFICATIONS -->
+  <div style="margin-top:56px;">
+    <div class="section-label" style="margin-bottom:24px;">Certifications</div>
+    <div class="cert-grid reveal">
+      <div class="cert-card">
+        <div class="cert-badge">
+          <!-- Replace src with your badge image: src="badges/ccna.png" -->
+          <img src="icons-images\ccna-switching-routing.png" alt="CCNA Badge" style="width:100%;height:100%;object-fit:contain;display:block;"/>
+        </div>
+        <div>
+          <div class="cert-name">CCNA: Switching, Routing, and Wireless Essentials</div>
+          <div class="cert-issuer">Cisco Networking Academy · 2025</div>
+        </div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-badge">
+          <!-- Replace src with your badge image: src="badges/linux.png" -->
+          <img src="icons-images\linux-esssentials.png" alt="Linux Badge" style="width:100%;height:100%;object-fit:contain;display:block;"/>
+        </div>
+        <div>
+          <div class="cert-name">NDG Linux Essentials</div>
+          <div class="cert-issuer">Cisco Networking Academy · 2024</div>
+        </div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-badge">
+          <!-- Replace src with your badge image: src="badges/python.png" -->
+          <img src="icons-images\python-essential.png" alt="Python Badge" style="width:100%;height:100%;object-fit:contain;display:block;"/>
+        </div>
+        <div>
+          <div class="cert-name">PCAP – Programming Essentials in Python</div>
+          <div class="cert-issuer">Cisco Networking Academy · 2024</div>
+        </div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-badge">
+          <!-- Replace src with your badge image: src="badges/cpp.png" -->
+          <img src="icons-images\c++-essentials.png" alt="C++ Badge" style="width:100%;height:100%;object-fit:contain;display:block;"/>
+        </div>
+        <div>
+          <div class="cert-name">CPA – Programming Essentials in C++</div>
+          <div class="cert-issuer">Cisco Networking Academy · 2023</div>
+        </div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-badge">
+          <!-- Replace src with your badge image: src="badges/clp.png" -->
+          <img src="icons-images\c-advanced.png" alt="C Badge" style="width:100%;height:100%;object-fit:contain;display:block;"/>
+        </div>
+        <div>
+          <div class="cert-name">CLP – Advanced Programming in C</div>
+          <div class="cert-issuer">Cisco Networking Academy · 2023</div>
+        </div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-badge">
+          <!-- Replace src with your badge image: src="badges/cla.png" -->
+          <img src="icons-images\c-essentials.png" alt="CLA Badge" style="width:100%;height:100%;object-fit:contain;display:block;"/>
+        </div>
+        <div>
+          <div class="cert-name">CLA – Programming Essentials in C</div>
+          <div class="cert-issuer">Cisco Networking Academy · 2023</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="cosmic-divider"></div>
+
+<!-- GITHUB ACTIVITY -->
+<section id="github">
+  <div class="section-label">06 // Transmission Log</div>
+  <h2 class="section-title">GitHub <span>Activity</span></h2>
+
+  <!-- Stats row (hide_title: card headings are custom; count_private removed — needs self-hosted stats + PAT) -->
+  <div class="gh-stats-row reveal">
+    <div class="gh-stat-card">
+      <div class="gh-card-head">
+        <h3 class="gh-card-title">GitHub Stats</h3>
+      </div>
+      <div class="gh-card-media">
+        <img
+          src="https://github-readme-stats-ashen-one-90.vercel.app/api?username=Wandering-Astronaut&show_icons=true&hide_title=true&theme=dark&title_color=22d3ee&text_color=94a3b8&icon_color=f472b6&border_color=1e3a5f&bg_color=0d1117&hide_border=true&cache_seconds=7200"
+          alt="GitHub Stats"
+          class="gh-img gh-stats-remote"
+          referrerpolicy="no-referrer"
+          decoding="async"
+          loading="lazy"
+        />
+      </div>
+    </div>
+    <div class="gh-stat-card">
+      <div class="gh-card-head">
+        <h3 class="gh-card-title">Top Languages</h3>
+      </div>
+      <div class="gh-card-media">
+        <img
+          src="https://github-readme-stats-ashen-one-90.vercel.app/api/top-langs/?username=Wandering-Astronaut&layout=compact&hide_title=true&theme=dark&title_color=22d3ee&text_color=94a3b8&border_color=1e3a5f&bg_color=0d1117&hide_border=true&langs_count=8&cache_seconds=7200"
+          alt="Top Languages"
+          class="gh-img gh-stats-remote"
+          referrerpolicy="no-referrer"
+          decoding="async"
+          loading="lazy"
+        />
+      </div>
+    </div>
+  </div>
+
+  <!-- Contribution graph -->
+  <div class="gh-contrib-wrap reveal" style="transition-delay:0.15s;">
+    <div class="gh-contrib-label">
+      <span class="section-label" style="margin-bottom:0;">Contribution Calendar</span>
+      <a href="https://github.com/Wandering-Astronaut" target="_blank" class="gh-profile-link">@Wandering-Astronaut ↗</a>
+    </div>
+    <div class="gh-contrib-card">
+      <!-- ghchart.rshah.org renders your REAL contribution SVG -->
+      <div class="gh-contrib-chart-clip">
+        <img
+          src="https://ghchart.rshah.org/22d3ee/Wandering-Astronaut"
+          alt="Wandering-Astronaut's GitHub contribution chart"
+          class="gh-contrib-img gh-contrib-chart"
+          data-ghchart-src="https://ghchart.rshah.org/22d3ee/Wandering-Astronaut"
+          data-gh-empty-fill="#161b22"
+          referrerpolicy="no-referrer"
+          decoding="async"
+          loading="lazy"
+          onerror="this.closest('.gh-contrib-card').innerHTML='<div class=\'gh-fallback\'>Contribution graph unavailable — <a href=\'https://github.com/Wandering-Astronaut\' target=\'_blank\'>view on GitHub ↗</a></div>'"
+        />
+      </div>
+    </div>
+    <div class="gh-contrib-legend" aria-hidden="true">
+      <span class="gh-legend-label">Less</span>
+      <div class="gh-legend-squares">
+        <span class="gh-legend-cell"></span>
+        <span class="gh-legend-cell"></span>
+        <span class="gh-legend-cell"></span>
+        <span class="gh-legend-cell"></span>
+        <span class="gh-legend-cell"></span>
+      </div>
+      <span class="gh-legend-label">More</span>
+    </div>
+    <div class="gh-contrib-footer">
+      <span></span>
+      <a href="https://github.com/Wandering-Astronaut" target="_blank" class="gh-profile-link">View full profile</a>
+    </div>
+  </div>
+
+  <!-- Streak -->
+  <div class="gh-streak-wrap reveal" style="transition-delay:0.25s;">
+    <div class="gh-stat-card gh-streak-card">
+      <div class="gh-card-head">
+        <span class="gh-card-kicker">Streak</span>
+        <h3 class="gh-card-title">Contribution Streak</h3>
+      </div>
+      <div class="gh-card-media">
+        <img
+          src="https://streak-stats.demolab.com?user=Wandering-Astronaut&amp;theme=dark&amp;hide_border=true&amp;background=0d1117&amp;ring=22d3ee&amp;fire=f472b6&amp;currStreakLabel=22d3ee&amp;sideLabels=94a3b8&amp;sideNums=f0f4ff&amp;currStreakNum=f0f4ff&amp;dates=94a3b8&amp;stroke=1e3a5f&amp;border=1e3a5f"
+          alt="GitHub Streak"
+          class="gh-img gh-streak-img"
+          referrerpolicy="no-referrer"
+          decoding="async"
+          loading="lazy"
+        />
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="cosmic-divider"></div>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-label" style="justify-content:center;">07 // Signal Transmission</div>
+  <h2 class="section-title">Get In <span>Touch</span></h2>
+  <p class="contact-desc">
+    Whether you have a mission in mind, a project to launch, or just want to talk code — my comms are open. I'm currently open to new opportunities.
+  </p>
+  <a href="mailto:joshuamortel030@email.com" class="contact-email">joshuamortel030@email.com</a>
+  <div class="contact-info-row">
+    <a href="tel:+639167409586" class="contact-info-chip">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.15 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.06 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 8.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21 16z"/></svg>
+      +63 916 740 9586
+    </a>
+    <a href="https://github.com/Wandering-Astronaut" target="_blank" class="contact-info-chip">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+      Wandering-Astronaut
+    </a>
+    <a href="https://www.linkedin.com/in/joshua-adrian-mortel/" target="_blank" class="contact-info-chip">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+      LinkedIn
+    </a>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-text">© 2026 — Joshua Mortel✦ Crafted among the stars</div>
+  <div class="footer-links">
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="https://github.com/Wandering-Astronaut" target="_blank">GitHub</a>
+    <a href="https://linkedin.com/in/your-linkedin" target="_blank">LinkedIn</a>
+    <a href="#contact">Contact</a>
+  </div>
+</footer>
+
+
+<script src="main.js"></script>
+</body>
+</html>
